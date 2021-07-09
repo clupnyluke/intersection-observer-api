@@ -1,6 +1,6 @@
 /* eslint-disable operator-linebreak */
 import { curry } from 'lodash';
-import * as IntersectionObserver from './IntersectionObserver';
+import * as IntersectionObserver from './IntersectionObserverApi';
 
 // State
 let disconnect: null | (() => void) = null;
