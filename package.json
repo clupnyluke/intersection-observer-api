@@ -1,6 +1,6 @@
 {
   "name": "intersection-observer-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small library to manage observer api's and callbacks with specific helpers for the window observer",
   "type": "module",
   "main": "index.js",
