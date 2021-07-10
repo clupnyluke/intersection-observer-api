@@ -15,7 +15,7 @@ It takes an element as the first parameter, an array of numbers 0-1 as the secon
 Returns a function to unobserve the element
 
 ```
-Observer Entry
+Observer Entry:
   - target: Element
   - boundingClientRect: dom Rect
   - intersectionRatio : number
@@ -24,7 +24,7 @@ Observer Entry
   - rootBounds: dom rect
   - time: number
 
-Observer State
+Observer State:
   - movingUp: boolean
   - movingDown: boolean
   - movingRight: boolean
@@ -32,6 +32,24 @@ Observer State
   - ratioGrowing: boolean
   - ratioShrinking: boolean
 ```
+
+The api itself is a little more complicated:
+First genereate a observer target list by calling addObserverTargetToList which takes an existing observer target list and adds the new observer target along with initial state and returns the new observer
+
+Then create the observer with makeObserverFromList which takes the created list as the first parameter and any observer options as the second parameter.
+Returns the disconnect for the observer.
+
+In the future, I will create more helper functions to assist in managing the observer list and creation/deletion of the observer like what is done with the window observer.
+
+```
+Observer Target:
+  - target: element
+  - thresholds: number[]
+  - callback: (Observer Entry, Observer State) => void
+  
+Observer Options:
+  - root: Element | Document | null // null is the window
+  - rootMargin: string // same as margin css shorthand
 
 ## Contact:
 - clupnyluke@gmail.com
